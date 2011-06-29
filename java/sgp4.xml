@@ -1,0 +1,18 @@
+<project default="jar">
+    <path id="classpath">
+        <pathelement path="lib/vecmath-1.3.1.jar"/>
+    </path>
+ 
+    <target name="compile">
+        <javac srcdir="." classpathref="classpath"/>
+    </target>
+    <target name="jar" depends="compile">
+        <jar destfile="sgp4.jar"
+             basedir="."
+             includes="**/*.class">
+            <manifest>
+                <attribute name="Main-Class" value="sgp4v.Sgp4Unit"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
