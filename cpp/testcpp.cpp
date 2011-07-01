@@ -92,17 +92,17 @@ strcpy(monstr[12], "Dec");
 
         //opsmode = 'a' best understanding of how afspc code works
         //opsmode = 'i' imporved sgp4 resulting in smoother behavior
-        printf("input operation mode a, i \n\n");
-        opsmode = getchar();
-        fflush(stdin);
+        printf("input operation mode a, i \n");
+        scanf(" %c", &opsmode);
+        printf("you entered: %c\n", opsmode);
 
         //typerun = 'c' compare 1 year of full satcat data
         //typerun = 'v' verification run, requires modified elm file with
         //              start, stop, and delta times
         //typerun = 'm' maunual operation- either mfe, epoch, or dayof yr also
-        printf("input type of run c, v, m \n\n");
-        typerun = getchar();
-        fflush(stdin);
+        printf("input type of run c, v, m \n");
+        scanf(" %c", &typerun);
+        printf("you entered: %c\n", typerun);
 
         //typeinput = 'm' input start stop mfe
         //typeinput = 'e' input start stop ymd hms
@@ -110,7 +110,8 @@ strcpy(monstr[12], "Dec");
         if ((typerun != 'v') && (typerun != 'c'))
           {
             printf("input mfe, epoch (YMDHMS), or dayofyr approach, m,e,d \n\n");
-            typeinput = getchar();
+            scanf(" %c", &typeinput);
+            printf("you entered: %c\n", typeinput);
           }
           else
             typeinput = 'e';
